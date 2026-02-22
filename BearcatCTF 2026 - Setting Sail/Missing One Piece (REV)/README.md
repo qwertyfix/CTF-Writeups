@@ -70,7 +70,7 @@ export ONE_PIECE='IS_REAL'
 ## Result
 Success. The binary validates the environment and prints the flag:
 
-Flag: BCCTF{I_gU3S5_7hAt_Wh1t3BeArD_6uY_W45_TRu7h1n6!}
+**Flag: BCCTF{I_gU3S5_7hAt_Wh1t3BeArD_6uY_W45_TRu7h1n6!}**
 
 ![7](https://github.com/user-attachments/assets/0fb5478f-0b3b-4c2e-9287-170bdb4f35ce)
 
