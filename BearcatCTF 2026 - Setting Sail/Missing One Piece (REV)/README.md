@@ -50,7 +50,9 @@ If all checks pass, the binary triggers `snprintf` and calls `you_dont_need_to_r
 To satisfy the binary's requirements, I prepared the environment as follows:
 
 # 1. Setup the specific directory
+<pre>
 mkdir -p /tmp/gogear5 && cd /tmp/gogear5
+</pre>
 
 # 2. Rename the binary to match expectations
 cp /path/to/missing_one_piece ./devilishFruit
