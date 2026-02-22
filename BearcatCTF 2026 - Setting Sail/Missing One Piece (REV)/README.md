@@ -24,6 +24,8 @@ First, let's check the file type and its contents.
 2. Iterates through environment variables looking for a match with PWD=/tmp/gogear5.
 3. Searches the environment for the variable ONE_PIECE=IS_REAL.
 ![3](https://github.com/user-attachments/assets/74040ab2-40fe-436d-8fbd-26be064eb1c0)
+![8](https://github.com/user-attachments/assets/b4be0741-5dbb-43d2-9b88-b59638da3514)
+
 
 We run it and since the file was called missing_one_piece, and the path and variables did not match, the program output:
 ![4](https://github.com/user-attachments/assets/b4f12beb-f5d7-4246-9f1e-d8cb464ffe06)
