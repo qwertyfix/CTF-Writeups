@@ -1,7 +1,6 @@
 # BearcatCTF 2026 - Setting Sail (Write-up)
-
-## Challenge Description
 **Category:** Reverse Engineering
+## Challenge Description
 ![Снимок](https://github.com/user-attachments/assets/892a1e1e-ca8a-4816-a3ef-fdb41e5e95f7)
 
 ---
