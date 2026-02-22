@@ -33,10 +33,8 @@ We run it and since the file was called missing_one_piece, and the path and vari
 
 ## Reverse Engineering (Radare2)
 
-Вводим дальше в консоль: r2 -A missing_one_piece
 ![5](https://github.com/user-attachments/assets/06f27233-8b6d-4ffd-8e75-4e05e534ce1a)
 
-Анализ функции main: pdf @ main
 ![6](https://github.com/user-attachments/assets/b6489475-43aa-48bf-9762-2a06bf78160b)
 
 Analysis of the `main` function (`pdf @ main`):
