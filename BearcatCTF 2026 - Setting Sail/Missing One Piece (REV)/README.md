@@ -43,6 +43,7 @@ Analysis of the `main` function (`pdf @ main`):
 | `0x000013cd` | `strcmp(argv[0], "./devilishFruit")` | Ensures the file name is correct. |
 | `0x1404 - 0x1474` | `envp` Loop (PWD) | Checks if current path is `/tmp/gogear5`. |
 | `0x149a - 0x150a` | `envp` Loop (Variable) | Checks for `ONE_PIECE=IS_REAL` in environment. |
+
 If all checks pass, the binary triggers `snprintf` and calls `you_dont_need_to_rev_this` to reveal the flag.
 
 ## Exploitation (Solution)
