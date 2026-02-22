@@ -19,8 +19,7 @@ First, let's check the file type and its contents.
   
 ![2](https://github.com/user-attachments/assets/57220d89-59da-4436-9e1d-d8d7631a64a7)
 
-**Dynamic Analysis (ltrace)**
-It is clear that the program actively uses strcmp to check environment parameters:
+**Dynamic Analysis (ltrace):** It is clear that the program actively uses strcmp to check environment parameters:
 1. Compares the file name to the string ./devilishFruit
 2. Iterates through environment variables looking for a match with PWD=/tmp/gogear5.
 3. Searches the environment for the variable ONE_PIECE=IS_REAL.
