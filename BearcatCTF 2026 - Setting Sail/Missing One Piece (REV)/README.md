@@ -12,9 +12,9 @@ First, let's check the file type and its contents.
 ![1](https://github.com/user-attachments/assets/663368b9-d641-4154-9c3f-da4148b8a7eb)
 
 - **Strings:** Interesting strings were found inside the binary:
-- `./devilishFruit` (Expected binary name)
-- `PWD=/tmp/gogear5` (Expected working directory)
-- `ONE_PIECE=IS_REAL` (Required environment variable)
+ `./devilishFruit` (Expected binary name)
+ `PWD=/tmp/gogear5` (Expected working directory)
+ `ONE_PIECE=IS_REAL` (Required environment variable)
   
 ![2](https://github.com/user-attachments/assets/57220d89-59da-4436-9e1d-d8d7631a64a7)
 
