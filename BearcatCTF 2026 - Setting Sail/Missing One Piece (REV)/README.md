@@ -1,14 +1,7 @@
-____                      _    ____ _____ _____   ____   ___  ____   __    
- | __ )  ___  __ _ _ __ ___/ |_ / ___|_   _|  ___| |___ \ / _ \|___ \ / /_   
- |  _ \ / _ \/ _` | '__/ __| __| |     | | | |_      __) | | | | __) | '_ \  
- | |_) |  __/ (_| | | | (__| |_| |___  | | |  _|    / __/| |_| / __/| (_) | 
- |____/ \___|\__,_|_|  \___|\__|\____| |_| |_|     |_____|\___/_____|\___/  
-                                                                             
- > Initializing write-up... [OK]
- > Loading environment...    [OK]
 # BearcatCTF 2026 - Setting Sail (Write-up)
-**Category:** Reverse Engineering
 ## Challenge Description
+**Category:** Reverse Engineering
+
 ![Снимок](https://github.com/user-attachments/assets/892a1e1e-ca8a-4816-a3ef-fdb41e5e95f7)
 
 ---
