@@ -9,6 +9,7 @@
 First, let's check the file type and its contents.
 
 **Type:** ELF 64-bit LSB pie executable
+
 ![1](https://github.com/user-attachments/assets/663368b9-d641-4154-9c3f-da4148b8a7eb)
 
 **Strings:** Interesting strings were found inside the binary:
