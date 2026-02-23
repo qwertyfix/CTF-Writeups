@@ -58,7 +58,7 @@ mkdir -p /tmp/gogear5 && cd /tmp/gogear5
 # 2. Rename the binary to match expectations
 <pre>
 cp /path/to/missing_one_piece ./devilishFruit
-chmod +x ./devilishFruit
+chmod 775 ./devilishFruit
 </pre>
 
 # 3. Set the environment variable and execute
