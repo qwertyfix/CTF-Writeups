@@ -21,13 +21,36 @@ gcc elf.c -o elf -m32 -fno-stack-protector -z execstack -no-pie -Wno-stringop-ov
 ![1 4](https://github.com/user-attachments/assets/349842db-4367-458a-a9f5-fcaee2497c11)
 
 -m32: Compiles for 32-bit architecture.
+
 -fno-stack-protector: Disables stack canaries.
+
 -z execstack: Enables executable stack.
+
 -no-pie: Disables Position Independent Executable (static addresses).
+
+I use a one-liner in Python combined with the `cat` command to maintain an interactive shell after submitting
 
 ```bash
 (python3 -c "from pwn import *; sys.stdout.buffer.write(b'A' * 40 + p32(0xdeadbeef)"; cat) | ./elf
 ```
 
 ![1 5](https://github.com/user-attachments/assets/de9e1231-9035-4cd0-b374-99908be30ea8)
+
+## Exploitation
+
+After connecting via SSH, we enter the same command and it doesn’t work.
+
+![1 6](https://github.com/user-attachments/assets/260ec6b4-ad07-4043-af45-94d0ff449a13)
+
+The pwn library is not available on the remote server, so we use the system library instead and slightly adjust the (p32(0xdeadbeef) >> b'\xef\xbe\xad\xde') line, since the pwn library is no longer used.
+
+![1 7](https://github.com/user-attachments/assets/90093cb9-3b16-4690-89c0-80be5977290b)
+
+Gaining access to the shell
+
+We check the rights and read the file, we get the password
+
+**Password: 1w4ntm0r3pr0np1s** 
+
+![1 8](https://github.com/user-attachments/assets/fcb74346-8231-4fcd-822f-0b7c2c409259)
 
