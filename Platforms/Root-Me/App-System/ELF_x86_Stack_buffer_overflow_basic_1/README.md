@@ -20,10 +20,10 @@ gcc elf.c -o elf -m32 -fno-stack-protector -z execstack -no-pie -Wno-stringop-ov
 ```
 ![1 4](https://github.com/user-attachments/assets/349842db-4367-458a-a9f5-fcaee2497c11)
 
-- m32: Compiles for 32-bit architecture.
-- fno-stack-protector: Disables stack canaries.
-- z execstack: Enables executable stack.
-- no-pie: Disables Position Independent Executable (static addresses).
+- -m32: Compiles for 32-bit architecture.
+- -fno-stack-protector: Disables stack canaries.
+- -z execstack: Enables executable stack.
+- -no-pie: Disables Position Independent Executable (static addresses).
 - -Wno-stringop-overflow: To prevent complaints from the program
 
 I use a one-liner in Python combined with the `cat` command to maintain an interactive shell after submitting
