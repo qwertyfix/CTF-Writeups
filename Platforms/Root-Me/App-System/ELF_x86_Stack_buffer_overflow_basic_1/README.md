@@ -10,3 +10,21 @@ We analyze the code
 * **Buffer:** `char buf[40]` — The allocated space in the stack.
 * **Vulnerability:** `fgets(buf, 45, stdin)` — It reads 45 bytes into a 40-byte buffer.
 * **Win Condition:** The local variable `check` must be overwritten with `0xdeadbeef`.
+
+## Compilation and strategy
+
+We compile the code with protection disabled to simulate a vulnerability.
+
+```bash
+gcc elf.c -o elf -m32 -fno-stack-protector -z execstack -no-pie -Wno-stringop-overflow
+```
+![1 4](https://github.com/user-attachments/assets/349842db-4367-458a-a9f5-fcaee2497c11)
+
+-m32: Compiles for 32-bit architecture.
+
+-fno-stack-protector: Disables stack canaries.
+
+-z execstack: Enables executable stack.
+
+-no-pie: Disables Position Independent Executable (static addresses).
+
