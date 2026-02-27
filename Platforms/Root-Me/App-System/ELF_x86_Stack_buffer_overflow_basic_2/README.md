@@ -21,9 +21,9 @@ gcc basic.c -o basic -m32 -fno-stack-protector -z noexecstack -no-pie -Wno-strin
 
 # Vulnerability Research
 
+|Offset |	Variable |	Description |
+| --- | --- | --- |
 |0 - 127 |	buf[128] |	Local char array (Target for overflow)|
-| --- | --- | --- |
 |128 - 131	| void (*func)() | Function Pointer (The Exploit Primitive)|
-| --- | --- | --- |
 |132 | null-byte	| Terminator byte appended by fgets|
 
