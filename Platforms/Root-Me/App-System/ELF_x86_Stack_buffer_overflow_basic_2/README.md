@@ -27,3 +27,11 @@ gcc basic.c -o basic -m32 -fno-stack-protector -z noexecstack -no-pie -Wno-strin
 |128 - 131	| void (*func)() | Function Pointer (The Exploit Primitive)|
 |132 | null-byte	| Terminator byte appended by fgets|
 
+Checking the address of a shell function using gdb
+
+```bash
+nm ./basic | grep shell
+```
+
+![2 6](https://github.com/user-attachments/assets/a6ce26fd-6948-40bf-86f0-f02c733b3a41)
+
