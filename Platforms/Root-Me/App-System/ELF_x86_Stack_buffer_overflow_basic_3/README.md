@@ -70,3 +70,17 @@ void shell(void)
 
 ```
 
+# Preparing
+
+First, we need to compile the program. Most importantly, we need to disable optimization (-O0), otherwise the variable itself will end up in "hell" and we won't be able to access the check variable from buffer.
+
+```bash
+gcc -g -O0 -m32 task.c -o task
+```
+- -g: Includes names so that the location can be viewed by address by specifying the variable name.
+- -O0: Disables the trick. Puts the variable in memory instead of registers for optimization.
+- -m32: Does everything in 4 bytes.
+
+```c
+//The main problem with compilation was probably that I didn't disable optimization, and some variables could have gone into registers where it would have been more difficult to get them out.
+``` 
