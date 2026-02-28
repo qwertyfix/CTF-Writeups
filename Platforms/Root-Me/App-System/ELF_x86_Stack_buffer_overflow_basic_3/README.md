@@ -66,4 +66,7 @@ void shell(void)
   system("/bin/bash");
 }
 
+// From analyzing the code, it's clear that we need the check variable to be equal to a hexadecimal value. The problem is that the variable itself has no input. Initially, I thought about accessing the shell directly through the main function, by going beyond the buffer, but I realized it's simpler and more logical to use the buffer variable for check.
+
 ```
+
