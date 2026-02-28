@@ -83,4 +83,16 @@ gcc -g -O0 -m32 task.c -o task
 
 ```c
 //The main problem with compilation was probably that I didn't disable optimization, and some variables could have gone into registers where it would have been more difficult to get them out.
-``` 
+```
+
+![3 4](https://github.com/user-attachments/assets/0099e6af-d11f-4bb7-8ac3-f0c5f79f605b)
+
+We act according to the scheme
+```bash
+gdb task >> break main >> run >> p &buffer >> p &check >> p (long)value - (long)value
+```
+
+![3 4](https://github.com/user-attachments/assets/c6c7b816-d577-4df6-b25f-0d6435d62b63)
+
+The difference is -4 bytes, which means we need to take 4 steps back to get to this variable.
+
