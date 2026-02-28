@@ -18,7 +18,7 @@ void shell(void);
 int main()
 {
  
-  char buffer[64];
+  char buffer[64]; // The buffer is limited to 64 bytes
   int check;
   int i = 0;
   int count = 0;
@@ -27,9 +27,9 @@ int main()
   fflush(stdout);
   while(1)
     {
-      if(count >= 64)
+      if(count >= 64) // The conditions are not greater than or equal to 64, which means going up won't work (I tried)
         printf("Oh no...Sorry !\n");
-      if(check == 0xbffffabc)
+      if(check == 0xbffffabc) // We need this
         shell();
       else
         {
@@ -39,11 +39,11 @@ int main()
                 case '\n':
                   printf("\a");
                   break;
-                case 0x08:
+                case 0x08: // Step back by byte
                   count--;
                   printf("\b");
                   break;
-                case 0x04:
+                case 0x04: // Step forward by byte
                   printf("\t");
                   count++;
                   break;
