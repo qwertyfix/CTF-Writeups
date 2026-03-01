@@ -48,7 +48,5 @@ Gaining access to the shell
 
 We check the rights and read the file, we get the password
 
-**Password: 1w4ntm0r3pr0np1s** 
-
-![1 8](https://github.com/user-attachments/assets/fcb74346-8231-4fcd-822f-0b7c2c409259)
+![1 8](https://github.com/user-attachments/assets/6feae1e4-5de7-4365-8ee1-50352a6246ef)
 
