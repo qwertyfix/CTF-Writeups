@@ -104,7 +104,7 @@ We enter the same line, here ```b'\x08' * 4``` takes -4 steps back in the buffer
 
 # Password
 
-**Password: Sm4shM3ify0uC4**
+![3 5](https://github.com/user-attachments/assets/e6177d39-1f00-44e7-9efd-20519c8e3114)
 
-![3 5](https://github.com/user-attachments/assets/1df1a7a7-bbf4-4152-956d-1c090142678e)
+
 
