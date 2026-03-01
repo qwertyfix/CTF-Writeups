@@ -56,7 +56,5 @@ We import the sys library and fill the buffer with 128 characters, then enter th
 
 # Post-Exploitation
 
-**Password: B33r1sSoG0oD4y0urBr4iN**
-
-![2 8](https://github.com/user-attachments/assets/74ddb88f-0b54-41ec-88b0-252d3a751754)
+![2 8](https://github.com/user-attachments/assets/394cb555-2352-4662-b28d-14e0a60c4a67)
 
