@@ -66,8 +66,31 @@ Also, don't forget about ```strcat(cmd, arg)```. We just need the system to run 
 | Offset  | Field           | Description       |
 | :--- | :--- | :--- |
 | -0x10     | prev_size      | Chunk metadata: size of the previous chunk     |
-| -0x08     | size (0x31)    | Chunk metadata: size + flags      |
+| -0x08     | size    | Chunk metadata: size + flags      |
 |  0x00     | arg (user data)| Start of buffer (32 bytes)        |
 |  0x20     | prev_size      | Next chunk (cmd) metadata         |
-|  0x28     | size (0x411)   | Next chunk (cmd) size field       |
+|  0x28     | size   | Next chunk (cmd) size field       |
 |  0x30     | cmd (user data)| Start of your buffer (1024 bytes) |
+
+Considering the presence of the gets function, we can, in theory, overflow the array and go beyond the boundary, the array itself is 32 bytes, up to the cmd array of 16 bytes (prev_size, size).
+
+| Original cmd | Your Input | Final State | Logic               |
+| :--- | :--- | :--- |
+| /            | /          | /           | Overwritten (same)  |
+| b            | b          | b           | Overwritten (same)  |
+| i            | i          | i           | Overwritten (same)  |
+| n            | n          | n           | Overwritten (same)  |
+| /            | /          | /           | Overwritten (same)  |
+| l            | s          | s           | Changed             |
+| s            | h          | h           | Changed             |
+| (space)      | \x00       | \x00        | Null Terminator     |
+| -            | —          | -           | Ignored by system() |
+| l            | —          | l           | Ignored by system() |
+| (space)      | —          | (space)     | Ignored by system() |
+| \x00         | —          | \x00        | Old terminator      |
+
+Our payload looks like this now.
+```
+python3 -c "import sys; sys.stdout.buffer.write(b'\x00' + b'A' * 47 + b'/bin/sh\x00')"
+```
+
