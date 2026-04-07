@@ -75,7 +75,7 @@ Also, don't forget about ```strcat(cmd, arg)```. We just need the system to run 
 Considering the presence of the gets function, we can, in theory, overflow the array and go beyond the boundary, the array itself is 32 bytes, up to the cmd array of 16 bytes (prev_size, size).
 
 | Original cmd | Your Input | Final State | Logic               |
-| :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- |
 | /            | /          | /           | Overwritten (same)  |
 | b            | b          | b           | Overwritten (same)  |
 | i            | i          | i           | Overwritten (same)  |
