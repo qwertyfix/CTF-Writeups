@@ -74,7 +74,7 @@ Also, don't forget about ```strcat(cmd, arg)```. We just need the system to run 
 
 Considering the presence of the gets function, we can, in theory, overflow the array and go beyond the boundary, the array itself is 32 bytes, up to the cmd array of 16 bytes (prev_size, size).
 
-A null byte is required at the start since strcat appends to the end of cmd. The argument is only used to trigger the overflow—system() executes only what’s in cmd.
+A null byte is required at the start since strcat appends to the end of cmd. The argument is only used to trigger the overflow—system() executes only what’s in cmd. If there is no null byte at the beginning, the strcat function may append arg along with garbage data to cmd, so instead of getting /bin/sh, you end up with /bin/shAAAAAAAA....
 
 A null byte is also placed at the end to terminate the string. Without it, leftover bytes from the original cmd may affect execution.
 
