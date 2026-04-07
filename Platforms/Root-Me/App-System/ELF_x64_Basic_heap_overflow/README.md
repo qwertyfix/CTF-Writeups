@@ -74,20 +74,9 @@ Also, don't forget about ```strcat(cmd, arg)```. We just need the system to run 
 
 Considering the presence of the gets function, we can, in theory, overflow the array and go beyond the boundary, the array itself is 32 bytes, up to the cmd array of 16 bytes (prev_size, size).
 
-| Original cmd | Your Input | Final State | Logic               |
-| :--- | :--- | :--- | :--- |
-| /            | /          | /           | Overwritten (same)  |
-| b            | b          | b           | Overwritten (same)  |
-| i            | i          | i           | Overwritten (same)  |
-| n            | n          | n           | Overwritten (same)  |
-| /            | /          | /           | Overwritten (same)  |
-| l            | s          | s           | Changed             |
-| s            | h          | h           | Changed             |
-| (space)      | \x00       | \x00        | Null Terminator     |
-| -            | —          | -           | Ignored by system() |
-| l            | —          | l           | Ignored by system() |
-| (space)      | —          | (space)     | Ignored by system() |
-| \x00         | —          | \x00        | Old terminator      |
+A null byte is required at the start since strcat appends to the end of cmd. The argument is only used to trigger the overflow—system() executes only what’s in cmd.
+
+A null byte is also placed at the end to terminate the string. Without it, leftover bytes from the original cmd may affect execution.
 
 | Field        | 0    | 1 | 2 | 3 | 4 | 5 | 6 | 7       | 8 | 9 | 10      | 11    |
 | :---         | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -96,7 +85,8 @@ Considering the presence of the gets function, we can, in theory, overflow the a
 | Final State  | /    | b | i | n | / | s | h | \x00    | - | l | (space) | \x00  |
 | Logic        | same | same | same | same | same | Changed | Changed | Null Terminator | Ignored | Ignored | Ignored | Old terminator |
 
-Our payload looks like this now.
+Our payload looks like this now. For the offset, we need 48 bytes (zero + 47 bytes). Then we rewrite cmd and write the shell call there.
+
 ```
 python3 -c "import sys; sys.stdout.buffer.write(b'\x00' + b'A' * 47 + b'/bin/sh\x00')"
 ```
