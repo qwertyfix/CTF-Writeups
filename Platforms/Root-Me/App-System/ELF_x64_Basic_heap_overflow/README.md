@@ -64,6 +64,7 @@ Also, don't forget about ```strcat(cmd, arg)```. We just need the system to run 
 # Preparing & Solution
 
 | Смещение  | Поле           | Описание                                       |
+| :--- | :--- | :--- |
 | -0x10     | prev_size      | Метаданные чанка arg                           |
 | -0x08     | size (0x31)    | Размер чанка arg (48 байт всего + флаг P)      |
 |  0x00     | arg (user data)| Начало твоего буфера                           |
