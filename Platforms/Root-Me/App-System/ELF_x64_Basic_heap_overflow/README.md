@@ -90,7 +90,7 @@ Considering the presence of the gets function, we can, in theory, overflow the a
 | \x00         | —          | \x00        | Old terminator      |
 
 | Field        | 0    | 1 | 2 | 3 | 4 | 5 | 6 | 7       | 8 | 9 | 10      | 11    |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | 
+| :---         | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Original cmd | /    | b | i | n | / | l | s | (space) | - | l | (space) | \x00  |
 | Your Input   | /    | b | i | n | / | s | h | \x00    | — | — | —       | —     |
 | Final State  | /    | b | i | n | / | s | h | \x00    | - | l | (space) | \x00  |
