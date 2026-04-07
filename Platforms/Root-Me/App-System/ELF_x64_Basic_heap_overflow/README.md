@@ -63,11 +63,11 @@ Also, don't forget about ```strcat(cmd, arg)```. We just need the system to run 
 
 # Preparing & Solution
 
-| Смещение  | Поле           | Описание                                       |
+| Offset  | Field           | Description       |
 | :--- | :--- | :--- |
-| -0x10     | prev_size      | Метаданные чанка arg                           |
-| -0x08     | size (0x31)    | Размер чанка arg (48 байт всего + флаг P)      |
-|  0x00     | arg (user data)| Начало твоего буфера                           |
-|  0x20     | prev_size      | Метаданные чанка cmd (target for overflow)     |
-|  0x28     | size (0x411)   | Размер чанка cmd                               |
-|  0x30     | cmd (user data)| Куда пишем /bin/sh                             |
+| -0x10     | prev_size      | Chunk metadata: size of the previous chunk     |
+| -0x08     | size (0x31)    | Chunk metadata: size + flags      |
+|  0x00     | arg (user data)| Start of buffer (32 bytes)        |
+|  0x20     | prev_size      | Next chunk (cmd) metadata         |
+|  0x28     | size (0x411)   | Next chunk (cmd) size field       |
+|  0x30     | cmd (user data)| Start of your buffer (1024 bytes) |
