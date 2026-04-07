@@ -56,7 +56,21 @@ int     main()
 ```
 
 The vulnerability is that we can call a shell if we change the command inside cmd, from ```"/bin/ls -l "``` to ```"/bin/sh"```
+
 This can be done using the gets function. We enter a value in arg and can go beyond the size of arg, that is, more than 32 bytes + metadata, to reach cmd.
 
+Also, don't forget about ```strcat(cmd, arg)```. We just need the system to run ```"/bin/sh"```, and strcat appends the values ​​to the end. I was confused while trying to figure out how to bypass this so that only the shell command would run, but I figured it out later.
 
+# Preparing & Solution
+
+Chunk Layout:
+
++----------------------+
+| prev_size            |
++----------------------+
+| size | flags         |
++----------------------+
+| user data            |
+| ...                  |
++----------------------+
 
