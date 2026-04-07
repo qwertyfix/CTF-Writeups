@@ -63,14 +63,14 @@ Also, don't forget about ```strcat(cmd, arg)```. We just need the system to run 
 
 # Preparing & Solution
 
-Chunk Layout:
-
-+----------------------+
-| prev_size            |
-+----------------------+
-| size | flags         |
-+----------------------+
-| user data            |
-| ...                  |
-+----------------------+
+Chunk Layout (64-bit):
++----------------------------+
+|     prev_size (8 bytes)    |  <-- Смещение 0
++----------------------------+
+|    size | flags (8 bytes)  |  <-- Смещение 8
++----------------------------+
+|                            |  <-- Смещение 16 (User Data)
+|         User Data          |
+|            ...             |
++----------------------------+
 
